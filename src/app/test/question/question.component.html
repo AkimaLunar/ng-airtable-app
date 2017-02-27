@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-6 col-md-offset-3 card">
+    <p>Total Questions: {{ questionsTotal }}</p>
+
+    <div [ngSwitch]="final">
+      <template [ngSwitchCase]="false">
+        <h3>{{ currentQuestion.text }}</h3>
+        <div class="row">
+          <button *ngFor="let option of currentQuestion.options" class="btn btn-block btn-lg btn-primary" (click)="check(option)">{{ option }}</button>
+        </div>
+      </template>
+      <template [ngSwitchCase]="true">
+        <h3>You got {{ correctAnswers }} out of {{ questionsTotal }}</h3>
+        <button class="btn btn-block btn-lg btn-danger" (click)="startOver()"> Start Over</button>
+      </template>
+      <template ngSwitchDefault>
+        <p>Something is not working...</p>
+      </template>
+    </div>
+    <p>&nbsp;</p>
+  </div>
+</div>
+
+
+
