@@ -1,1 +1,20 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  background: #eeeeee;
+}
+
+.card {
+  background: white;
+  box-shadow: 0px 3px 10px #bbb;
+  border-radius: 4px;
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  padding: 4rem; 
+}
+
+.question {
+  min-height: 400px;
+}
+

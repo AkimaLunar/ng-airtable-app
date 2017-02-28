@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Question } from './question'
+import { Question } from './question';
 import { DataService } from '../data.service';
+import { ProgressService } from '../progress.service';
 
 @Component({
   selector: 'quiz-question',
@@ -11,33 +12,24 @@ export class QuestionComponent implements OnInit {
   questions: Question[];
   questionsTotal: number;
   currentQuestion: Question;
-  progress: number;
   correctAnswers: number;
   final: boolean;
-  constructor(private dataService: DataService) { }
+  constructor(
+    private dataService: DataService,
+    public progressService: ProgressService
+  ) { }
 
   ngOnInit() {
-    // this.dataService.getQuestions()
-    //   .then(questions => this.questions = questions);
-    // this.currentQuestion = this.questions[0];
-    this.progress = 0;
     this.final = false;
     this.correctAnswers = 0;
-    this.questions= [
-      {text: "Question 1?", options: ["one", "two", "three"], answer:"two"},
-      {text: "Question 2?", options: ["one", "two", "three"], answer:"two"},
-      {text: "Question 3?", options: ["one", "two", "three"], answer:"two"},
-      {text: "Question 4?", options: ["one", "two", "three"], answer:"two"}
-    ];
-    this.currentQuestion = this.questions[this.progress];
+    this.questions = this.dataService.getQuestions();
+    this.currentQuestion = this.questions[this.progressService.counter];
     this.questionsTotal = this.questions.length;
-    console.log(this.progress);
   }
 
   next(): void {
-    if (this.progress < this.questionsTotal) {
-      console.log('Progress: ' + this.progress);
-      this.currentQuestion = this.questions[this.progress];
+    if (this.progressService.counter < this.questionsTotal) {
+      this.currentQuestion = this.questions[this.progressService.counter];
     }
   }
 
@@ -46,24 +38,21 @@ export class QuestionComponent implements OnInit {
   }
 
   check(guess: string): void {
-    console.log(guess === this.currentQuestion.answer);
     if (guess === this.currentQuestion.answer) {
       this.correctAnswers++;
     };
-    console.log('Correct answers: ' + this.correctAnswers);
-    this.progress++;
+    this.progressService.increment();
 
-    if (this.progress < this.questionsTotal) {
-      console.log('final? ' + this.final);
+    if (this.progressService.counter < this.questionsTotal) {
       this.next();
     } else {
-      console.log('final? ' + this.final);
       this.results();
+
     }
   }
 
   startOver(): void {
-    this.progress = 0;
+    this.progressService.reset();
     this.correctAnswers = 0;
     this.final = false;
     this.currentQuestion = this.questions[0];

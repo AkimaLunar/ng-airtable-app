@@ -1,7 +1,7 @@
 import { Question } from './test/question/question';
 
 export const TESTDATA: Question[] = [
-  {text: 'Question 1?', options: ['one', 'two', 'three'], answer:'two'},
-  {text: 'Question 2?', options: ['one', 'two', 'three'], answer:'two'},
-  {text: 'Question 3?', options: ['one', 'two', 'three'], answer:'two'}
-]
+  {text: 'Who is the cutest?', options: ['Ivy', 'David', 'Ria'], answer: 'Ivy'},
+  {text: 'Who is the smelliest?', options: ['Ivy', 'David', 'Ria'], answer: 'David'},
+  {text: 'Who forgot to wash the dishes?', options: ['Ivy', 'David', 'Ria'], answer: 'Ria'}
+];

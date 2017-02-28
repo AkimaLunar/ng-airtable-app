@@ -1,6 +1,6 @@
 <div class="row">
-  <div class="col-md-6 col-md-offset-3 card">
-    <p>Total Questions: {{ questionsTotal }}</p>
+  <div class="col-md-6 col-md-offset-3 card question">
+    <p>Total Questions: {{ questionsTotal }}. Progress: {{ progress }}</p>
 
     <div [ngSwitch]="final">
       <template [ngSwitchCase]="false">

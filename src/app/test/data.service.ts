@@ -5,12 +5,11 @@ import { TESTDATA } from '../mock-test-data';
 
 @Injectable()
 export class DataService {
-  getQuestions(): Promise<Question[]> {
-    return Promise.resolve(TESTDATA);
+  getQuestions(): Question[] {
+    return TESTDATA;
   }
 
-  getQuestion(i:number): Promise<Question> {
-    return this.getQuestions()
-    .then(questions => questions[i]);
+  getQuestion(i: number): Question {
+    return TESTDATA[i];
   }
 }
