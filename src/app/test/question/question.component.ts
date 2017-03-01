@@ -14,6 +14,7 @@ export class QuestionComponent implements OnInit {
   currentQuestion: Question;
   correctAnswers: number;
   final: boolean;
+  
   constructor(
     private dataService: DataService,
     public progressService: ProgressService

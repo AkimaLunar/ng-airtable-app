@@ -1,0 +1,13 @@
+.question {
+  min-height: 400px;
+
+  &__total {
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #aaaaaa;
+      
+  }
+  &__title {
+    margin-bottom: 1.5rem;
+  }
+}

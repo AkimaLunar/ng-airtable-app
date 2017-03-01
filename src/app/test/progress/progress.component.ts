@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit, OnChanges } from '@angular/core';
 
+import { DataService } from '../data.service';
 import { ProgressService } from '../progress.service';
 
 
@@ -9,9 +10,21 @@ import { ProgressService } from '../progress.service';
   styleUrls: ['./progress.component.css'],
 })
 export class ProgressComponent implements OnInit {
-  constructor(public progressService: ProgressService) { }
+  total: number;
+  segment: number;
+  segmentArray: Array<number>;
+  dividers:number;
+  dividerArray: Array<number>;
+
+  constructor(
+    private dataService: DataService,
+    public progressService: ProgressService
+  ) { }
 
   ngOnInit() {
+    this.total = this.dataService.getQuestions().length;
+    this.segment = 1 / this.total * 100;
+    this.dividers = this.total - 1;
   }
 
 }

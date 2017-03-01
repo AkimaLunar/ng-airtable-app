@@ -3,10 +3,10 @@ import { Injectable, EventEmitter } from '@angular/core';
 @Injectable()
 export class ProgressService {
     counter = 0;
-    increment() {
+    increment(): void {
         this.counter++;
     }
-    reset() {
+    reset(): void {
         this.counter = 0;
     }
 }
