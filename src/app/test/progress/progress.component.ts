@@ -14,7 +14,7 @@ import { ProgressService } from '../progress.service';
 export class ProgressComponent implements OnInit {
   total: number;
   segment: number;
-  dividers:number[];
+  dividers: number[];
   questions: Question[];
 
   constructor(
@@ -31,8 +31,8 @@ export class ProgressComponent implements OnInit {
 
   calculateDividers(arr): number[]  {
     let i;
-    let dividers = [];
-    let length = arr.length - 1;
+    const  dividers = [];
+    const  length = arr.length - 1;
     for (i = 0; i < length; i++) {
       dividers.push(i);
     }
