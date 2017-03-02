@@ -2,14 +2,8 @@
   <div class="col-md-6 col-md-offset-3">
     <div id="slider" class="ui-slider ui-slider-horizontal ui-widget ui-widget-content ui-corner-all" aria-disabled="false">
       
-      <!--<div *ngFor="i in dividerArray(dividers).fill(1)" class="ui-slider-segment" [style.margin-left]="segment + '%'"></div>-->
-      <div class="ui-slider-segment" [style.margin-left]="segment + '%'"></div>
-      <div class="ui-slider-segment" [style.margin-left]="segment + '%'"></div>
+      <div *ngFor = "let divider of dividers" class="ui-slider-segment" [style.margin-left]="segment + '%'"></div>
 
-      <!--<div *ngFor="i in segmentArray(total).fill(1)" class="ui-slider-segment"></div>-->
-      <div class="ui-slider-segment"></div>
-      <div class="ui-slider-segment"></div>
-      <div class="ui-slider-segment"></div>
       <div class="ui-slider-range ui-widget-header ui-corner-all ui-slider-range-min" [style.width]="progressService.counter / total * 100 + '%'"></div>
       <div class="ui-slider-handle ui-state-default ui-corner-all" [style.left]="progressService.counter / total * 100 + '%'">{{ progressService.counter }} </div>
     </div>
@@ -17,4 +11,3 @@
 </div>
 
 
-<!--<div *ngFor="let i of dividerArray(dividers).fill(1)">Hello</div>-->

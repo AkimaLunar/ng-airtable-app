@@ -1,5 +1,7 @@
 import { Component, Input, OnInit, OnChanges } from '@angular/core';
 
+import { Question } from '../question/question';
+
 import { DataService } from '../data.service';
 import { ProgressService } from '../progress.service';
 
@@ -12,9 +14,8 @@ import { ProgressService } from '../progress.service';
 export class ProgressComponent implements OnInit {
   total: number;
   segment: number;
-  segmentArray: Array<number>;
-  dividers:number;
-  dividerArray: Array<number>;
+  dividers:number[];
+  questions: Question[];
 
   constructor(
     private dataService: DataService,
@@ -23,8 +24,18 @@ export class ProgressComponent implements OnInit {
 
   ngOnInit() {
     this.total = this.dataService.getQuestions().length;
+    this.questions = this.dataService.getQuestions();
     this.segment = 1 / this.total * 100;
-    this.dividers = this.total - 1;
+    this.dividers = this.calculateDividers(this.questions);
   }
 
+  calculateDividers(arr): number[]  {
+    let i;
+    let dividers = [];
+    let length = arr.length - 1;
+    for (i = 0; i < length; i++) {
+      dividers.push(i);
+    }
+    return dividers;
+  }
 }
