@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/catch';
+import 'rxjs/add/operator/map';
+
 import { DataService } from '../services/data.service';
 import { ProgressService } from '../services/progress.service';
 import { Question } from './question/question';
@@ -9,18 +14,28 @@ import { Question } from './question/question';
   styleUrls: ['./quiz.component.css']
 })
 export class QuizComponent implements OnInit {
+  quizes;
+  errorMessage: string;
   questions: Question[];
   questionsTotal: number;
   currentQuestion: Question;
   correctAnswers: number;
   final: boolean;
 
+  mode = 'Observable';
+
   constructor(
     private dataService: DataService,
     public progressService: ProgressService
   ) { }
-
+  getQuizes() {
+    this.dataService.getQuizes()
+      .subscribe(
+        quizes => this.quizes = quizes,
+        error => this.errorMessage = <any>error);
+  }
   ngOnInit() {
+    this.getQuizes();
     this.final = false;
     this.correctAnswers = 0;
     this.questions = this.dataService.getQuestions();

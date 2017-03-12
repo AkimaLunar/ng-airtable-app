@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpModule, JsonpModule } from '@angular/http';
 
 import { DataService } from '../services/data.service';
 import { ProgressService } from '../services/progress.service';
@@ -11,7 +12,9 @@ import { FinalComponent } from './final/final.component';
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    HttpModule,
+    JsonpModule
   ],
   declarations: [QuizComponent, QuestionComponent, ProgressComponent, FinalComponent],
   exports: [QuizComponent],
