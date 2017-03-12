@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { HeaderModule } from './header/header.module';
-import { TestModule } from './test/test.module';
+import { QuizModule } from './quiz/quiz.module';
 
 import { AppComponent } from './app.component';
 
@@ -17,7 +17,7 @@ import { AppComponent } from './app.component';
     FormsModule,
     HttpModule,
     HeaderModule,
-    TestModule
+    QuizModule
   ],
   providers: [],
   bootstrap: [AppComponent]

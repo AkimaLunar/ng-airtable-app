@@ -1,20 +1,20 @@
 import { Component, OnInit } from '@angular/core';
-import { Question } from './question';
-import { DataService } from '../data.service';
-import { ProgressService } from '../progress.service';
+import { DataService } from '../services/data.service';
+import { ProgressService } from '../services/progress.service';
+import { Question } from './question/question';
 
 @Component({
-  selector: 'quiz-question',
-  templateUrl: './question.component.html',
-  styleUrls: ['./question.component.css']
+  selector: 'app-quiz',
+  templateUrl: './quiz.component.html',
+  styleUrls: ['./quiz.component.css']
 })
-export class QuestionComponent implements OnInit {
+export class QuizComponent implements OnInit {
   questions: Question[];
   questionsTotal: number;
   currentQuestion: Question;
   correctAnswers: number;
   final: boolean;
-  
+
   constructor(
     private dataService: DataService,
     public progressService: ProgressService
@@ -27,7 +27,6 @@ export class QuestionComponent implements OnInit {
     this.currentQuestion = this.questions[this.progressService.counter];
     this.questionsTotal = this.questions.length;
   }
-
   next(): void {
     if (this.progressService.counter < this.questionsTotal) {
       this.currentQuestion = this.questions[this.progressService.counter];

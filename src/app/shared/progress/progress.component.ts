@@ -1,13 +1,13 @@
 import { Component, Input, OnInit, OnChanges } from '@angular/core';
 
-import { Question } from '../question/question';
+import { Question } from '../../quiz/question/question';
 
-import { DataService } from '../data.service';
-import { ProgressService } from '../progress.service';
+import { DataService } from '../../services/data.service';
+import { ProgressService } from '../../services/progress.service';
 
 
 @Component({
-  selector: 'quiz-progress',
+  selector: 'app-progress',
   templateUrl: './progress.component.html',
   styleUrls: ['./progress.component.css'],
 })
