@@ -37,8 +37,8 @@ export class QuizComponent implements OnInit {
     this.final = true;
   }
 
-  check(guess: string): void {
-    if (guess === this.currentQuestion.answer) {
+  onGuess(guess: boolean): void {
+    if (guess === true) {
       this.correctAnswers++;
     };
     this.progressService.increment();
@@ -51,7 +51,7 @@ export class QuizComponent implements OnInit {
     }
   }
 
-  startOver(): void {
+  onReset(): void {
     this.progressService.reset();
     this.correctAnswers = 0;
     this.final = false;

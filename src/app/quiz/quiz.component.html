@@ -1,9 +1,20 @@
 <div class="row">
   <div class="col-md-6 col-md-offset-3">
     <div class="card question">
-      <p class="question__total">Total Questions: {{ questionsTotal }}</p>
 
-      <app-question></app-question>
+      <div [ngSwitch]="final">
+        <template [ngSwitchCase]="false">
+          <p class="question__total">Total Questions: {{ questionsTotal }}</p>
+          <app-question [currentQuestion]="currentQuestion" (onGuess)="onGuess($event)"></app-question>
+        </template>
+
+        <template [ngSwitchCase]="true">
+          <app-final [questions]="questions" [questionsTotal]="questionsTotal" [correctAnswers]="correctAnswers" (onReset)="onReset($event)"></app-final>
+        </template>
+
+        <template ngSwitchDefault>
+          <p>Something is not working...</p>
+        </template>
 
     </div>
   </div>
