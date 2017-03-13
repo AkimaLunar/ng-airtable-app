@@ -17,7 +17,7 @@ export class DataService {
 
   private extractData(res: Response) {
     let body = res.json();
-    return body.data || {  };
+    return body["770 Oak"] || "NOPE";
   }
 
   private handleError (error: Response | any) {
@@ -38,7 +38,8 @@ export class DataService {
 
   getQuizes() {
     return this.http.get(this.dataUrl)
-      .map(res => res.json())
+      .map(this.extractData)
+      // .map(res => res.json())
       .catch(this.handleError);
   }
 
