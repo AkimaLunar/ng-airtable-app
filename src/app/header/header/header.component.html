@@ -1,4 +1,4 @@
-<div class="row demo-row">
+<div class="row">
   <div class="col-xs-12">
     <nav class="navbar navbar-inverse navbar-embossed" role="navigation">
       <div class="navbar-header">
@@ -10,22 +10,23 @@
       <div class="collapse navbar-collapse" id="navbar-collapse-01">
         <ul class="nav navbar-nav navbar-left">
           <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Available Tests <b class="caret"></b></a>
+            <a ngbDropdownToggle href="#" onclick="event.preventDefault();" class="dropdown-toggle" data-toggle="dropdown">Available Tests <b class="caret"></b></a>
             <span class="dropdown-arrow"></span>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
-            </ul>
+            <ul ngbDropdown class="dropdown-menu dropdown-inverse" role="menu" style="max-height: 656px; overflow-y: auto; min-height: 108px;">
+              <li rel="0"><a tabindex="-1" href="#" class=""><span class="pull-left">Choose hero</span></a></li>
+              <li rel="1"><a tabindex="-1" href="#" class=""><span class="pull-left">Spider Man</span></a></li>
+              <li rel="2"><a tabindex="-1" href="#" class=""><span class="pull-left">Wolverine</span></a></li>
+              <li rel="3"><a tabindex="-1" href="#" class=""><span class="pull-left">Captain America</span></a></li>
+              <li rel="4" class="selected"><a tabindex="-1" href="#" class=""><span class="pull-left">X-Men</span></a></li>
+              <li rel="5"><a tabindex="-1" href="#" class=""><span class="pull-left">Crocodile</span></a></li></ul>
           </li>
-          <li><a href="#fakelink">About Us</a></li>
+          <li><a href="#fakelink" onclick="event.preventDefault();">Leaderboard</a></li>
+          <li><a href="#fakelink" onclick="event.preventDefault();">About Us</a></li>
          </ul>
          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#fakelink">Betsy DeVos<span class="navbar-unread">1</span></a></li>
+            <li><a href="#fakelink" onclick="event.preventDefault();" class="user">Betsy DeVos<img src="https://api.adorable.io/avatars/60/ria%40carmin.com" alt="betsy devos avatar" class="avatar avatar--small"></a></li>
         </ul>
       </div><!-- /.navbar-collapse -->
     </nav><!-- /navbar -->
   </div>
-  </div>
+</div>
