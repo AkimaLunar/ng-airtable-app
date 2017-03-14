@@ -13,15 +13,15 @@ import { DataService } from './services/data.service';
 })
 export class AppComponent implements OnInit {
   errorMessage: string;
-  quizes;
+  number;
   mode = 'Observable';
   constructor (private dataService: DataService) {}
   ngOnInit() { this.getQuizes(); }
 
   getQuizes() {
-    this.dataService.getQuizes()
+    this.dataService.getNumber()
                      .subscribe(
-                       quizes => this.quizes = quizes,
+                       number => this.number = number,
                        error =>  this.errorMessage = <any>error);
   }
 

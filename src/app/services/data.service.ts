@@ -4,6 +4,7 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/count';
 
 import { Question } from '../quiz/question/question';
 
@@ -13,11 +14,25 @@ import { TESTDATA } from '../mock-test-data';
 
 @Injectable()
 export class DataService {
-  private dataUrl = 'https://raw.githubusercontent.com/AkimaLunar/ng-airtable-app/restructure/src/app/mock-test-data.json';
+  // private dataUrl = 'https://raw.githubusercontent.com/AkimaLunar/ng-airtable-app/restructure/src/app/mock-test-data.json';
+  private dataUrl = 'https://api.airtable.com/v0/apppdxgm3hmrZWDwE/Quiz%20Two?api_key=keyRdgQxtBeMi3ASe';
+  private airtableUrl = 'https://api.airtable.com/v0/apppdxgm3hmrZWDwE/';
+  private airtableKey = 'https://api.airtable.com/v0/apppdxgm3hmrZWDwE/Quiz%20Two?api_key=keyRdgQxtBeMi3ASe';
+  private airtableBase = 'Quiz%20Two';
+
+  // private airtableBases = ['Quiz%20Two', 'Quiz%20One'];
 
   private extractData(res: Response) {
-    let body = res.json();
-    return body["770 Oak"] || "NOPE";
+    let data = res.json();
+    let quiz = [];
+    data.records.forEach(element => {
+      let question: any = new Object;
+      question.text = element.fields['Text'];
+      question.options = element.fields['Options'].split(', ');
+      question.answer = element.fields['CorrectAnswer'];
+      quiz.push(question);
+    });
+    return quiz;
   }
 
   private handleError (error: Response | any) {
@@ -39,12 +54,21 @@ export class DataService {
   getQuizes() {
     return this.http.get(this.dataUrl)
       .map(this.extractData)
-      // .map(res => res.json())
+      //.map(res => res.json())
       .catch(this.handleError);
   }
 
-  getQuiz(i: number) {
+  getNumber() {
+    return this.http.get(this.dataUrl).count().catch(this.handleError);
+  }
 
+  getQuiz(id: number) {
+    // let quizUrl = this.airtableUrl + this.airtableBases[id] + '?' + this.airtableKey;
+    let quizUrl = this.airtableUrl + this.airtableBase + '?' + this.airtableKey;
+    return this.http.get(quizUrl)
+      // .map(this.extractData)
+      .map(res => res.json())
+      .catch(this.handleError);
   }
 
   getQuestions(): Question[] {

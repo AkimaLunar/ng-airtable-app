@@ -16,7 +16,13 @@ import { Question } from './question/question';
 export class QuizComponent implements OnInit {
   quizes;
   errorMessage: string;
-  questions: Question[];
+  questions: any;
+
+  // Because it's an Observable and breaks the code
+  questions2: any ;
+  test: any;
+  // ------------------------
+
   questionsTotal: number;
   currentQuestion: Question;
   correctAnswers: number;
@@ -28,17 +34,25 @@ export class QuizComponent implements OnInit {
     private dataService: DataService,
     public progressService: ProgressService
   ) { }
-  getQuizes() {
+  getQuestions() {
     this.dataService.getQuizes()
       .subscribe(
-        quizes => this.quizes = quizes,
+
+        // Because it's an Observable and breaks the code
+        questions => this.questions2 = questions,
+        // ------------------------
+
         error => this.errorMessage = <any>error);
   }
   ngOnInit() {
-    this.getQuizes();
+    this.getQuestions();
     this.final = false;
     this.correctAnswers = 0;
+
+    // Because it's an Observable and breaks the code
     this.questions = this.dataService.getQuestions();
+    // ------------------------
+
     this.currentQuestion = this.questions[this.progressService.counter];
     this.questionsTotal = this.questions.length;
   }

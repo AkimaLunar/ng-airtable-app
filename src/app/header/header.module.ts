@@ -1,12 +1,12 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HeaderComponent } from './header/header.component';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { DropdownModule } from 'ng2-bootstrap';
 
 @NgModule({
   imports: [
     CommonModule,
-    NgbModule
+    DropdownModule.forRoot()
   ],
   declarations: [HeaderComponent],
   exports: [
