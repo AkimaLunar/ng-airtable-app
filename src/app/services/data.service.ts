@@ -17,7 +17,7 @@ export class DataService {
   // private dataUrl = 'https://raw.githubusercontent.com/AkimaLunar/ng-airtable-app/restructure/src/app/mock-test-data.json';
   private dataUrl = 'https://api.airtable.com/v0/apppdxgm3hmrZWDwE/Quiz%20Two?api_key=keyRdgQxtBeMi3ASe';
   private airtableUrl = 'https://api.airtable.com/v0/apppdxgm3hmrZWDwE/';
-  private airtableKey = 'https://api.airtable.com/v0/apppdxgm3hmrZWDwE/Quiz%20Two?api_key=keyRdgQxtBeMi3ASe';
+  private airtableKey = 'api_key=keyRdgQxtBeMi3ASe';
   private airtableBase = 'Quiz%20Two';
 
   // private airtableBases = ['Quiz%20Two', 'Quiz%20One'];
