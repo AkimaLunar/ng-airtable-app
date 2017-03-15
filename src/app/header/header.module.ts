@@ -8,6 +8,7 @@ import { DropdownModule } from 'ng2-bootstrap';
 @NgModule({
   imports: [
     CommonModule,
+    RouterModule,
     DropdownModule.forRoot()
   ],
   declarations: [HeaderComponent],

@@ -20,6 +20,7 @@ export class QuizComponent implements OnInit {
 
   // Because it's an Observable and breaks the code
   questions2: any ;
+  questions3: any;
   test: any;
   // ------------------------
 
@@ -33,28 +34,34 @@ export class QuizComponent implements OnInit {
   constructor(
     private dataService: DataService,
     public progressService: ProgressService
-  ) { }
-  getQuestions() {
+  ) {
+
     this.dataService.getQuizes()
       .subscribe(
 
-        // Because it's an Observable and breaks the code
-        questions => this.questions2 = questions,
+        // Because its an Observable and breaks the code
+        questions => this.parseQuestions(questions),
         // ------------------------
 
-        error => this.errorMessage = <any>error);
+        error => this.errorMessage = <any>error
+
+      );
   }
+  parseQuestions(q) {
+    this.questions3 = q;
+    console.log(this.questions3);
+  }
+
   ngOnInit() {
-    this.getQuestions();
     this.final = false;
     this.correctAnswers = 0;
 
     // Because it's an Observable and breaks the code
     this.questions = this.dataService.getQuestions();
     // ------------------------
-
-    this.currentQuestion = this.questions[this.progressService.counter];
-    this.questionsTotal = this.questions.length;
+    console.log(this.questions3);
+    this.currentQuestion = this.questions3[this.progressService.counter];
+    this.questionsTotal = this.questions3.length;
   }
 
   next(): void {

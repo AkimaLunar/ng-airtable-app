@@ -4,6 +4,7 @@ import { Http, Response } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/do';
 import 'rxjs/add/operator/count';
 
 import { Question } from '../quiz/question/question';
@@ -52,10 +53,14 @@ export class DataService {
   constructor(private http: Http){}
 
   getQuizes() {
+    // let data = static cache
     return this.http.get(this.dataUrl)
       .map(this.extractData)
+      .do(res => console.log(res))
       //.map(res => res.json())
       .catch(this.handleError);
+
+
   }
 
   getNumber() {
