@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
@@ -56,6 +56,7 @@ export class QuizComponent implements OnInit {
     this.currentQuestion = this.questions[this.progressService.counter];
     this.questionsTotal = this.questions.length;
   }
+
   next(): void {
     if (this.progressService.counter < this.questionsTotal) {
       this.currentQuestion = this.questions[this.progressService.counter];
