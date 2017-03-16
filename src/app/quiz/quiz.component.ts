@@ -4,6 +4,7 @@ import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
 
+import { ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 import { ProgressService } from '../services/progress.service';
 import { Question } from './question/question';
@@ -17,51 +18,37 @@ export class QuizComponent implements OnInit {
   quizes;
   errorMessage: string;
   questions: any;
-
-  // Because it's an Observable and breaks the code
-  questions2: any ;
-  questions3: any;
-  test: any;
-  // ------------------------
-
   questionsTotal: number;
   currentQuestion: Question;
   correctAnswers: number;
   final: boolean;
+  quizBehaviorSubject;
 
   mode = 'Observable';
 
   constructor(
     private dataService: DataService,
-    public progressService: ProgressService
-  ) {
-
-    this.dataService.getQuizes()
-      .subscribe(
-
-        // Because its an Observable and breaks the code
-        questions => this.parseQuestions(questions),
-        // ------------------------
-
-        error => this.errorMessage = <any>error
-
-      );
-  }
-  parseQuestions(q) {
-    this.questions3 = q;
-    console.log(this.questions3);
-  }
+    public progressService: ProgressService,
+    private route: ActivatedRoute,
+    private router: Router
+  ) { }
 
   ngOnInit() {
+    this.route.data
+      .subscribe(
+        function (x) {
+          console.log('Next: ' + x);
+        },
+        function (err) {
+          console.log('Error: ' + err);
+        },
+        function () {
+          console.log('Completed');
+        }
+      );
+    console.log('setting up the rest of the state');
     this.final = false;
     this.correctAnswers = 0;
-
-    // Because it's an Observable and breaks the code
-    this.questions = this.dataService.getQuestions();
-    // ------------------------
-    console.log(this.questions3);
-    this.currentQuestion = this.questions3[this.progressService.counter];
-    this.questionsTotal = this.questions3.length;
   }
 
   next(): void {

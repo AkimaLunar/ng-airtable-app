@@ -5,6 +5,8 @@ import { HttpModule, JsonpModule } from '@angular/http';
 import { AlertModule } from 'ng2-bootstrap';
 
 import RouterModule from './app.routes';
+import { QuizResolverService } from './services/quiz-resolver.service';
+import { DataService } from './services/data.service'
 
 import { HeaderModule } from './header/header.module';
 import { QuizModule } from './quiz/quiz.module';
@@ -29,7 +31,7 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
     HeaderModule,
     QuizModule
   ],
-  providers: [],
+  providers: [DataService, QuizResolverService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

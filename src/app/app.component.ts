@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
-import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/map';
-
 import { DataService } from './services/data.service';
+import { Observable } from 'rxjs/Observable';
+import { Question } from './quiz/question/question';
 
 @Component({
   selector: 'app-root',
@@ -12,17 +10,15 @@ import { DataService } from './services/data.service';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  errorMessage: string;
-  number;
   mode = 'Observable';
-  constructor (private dataService: DataService) {}
-  ngOnInit() { this.getQuizes(); }
-
-  getQuizes() {
-    this.dataService.getNumber()
-                     .subscribe(
-                       number => this.number = number,
-                       error =>  this.errorMessage = <any>error);
+  id = 0;
+  currentQuiz: Question[];
+  constructor ( private dataService: DataService) {}
+  ngOnInit() {
+    this.dataService.getQuiz2(this.id).subscribe((response => this.currentQuiz = response),
+      function(){
+        console.log('Promise: I failed :(!');
+      }
+    );
   }
-
 }

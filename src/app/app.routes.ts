@@ -1,11 +1,14 @@
 import { HomeComponent } from './home/home.component';
+import { RouterModule } from '@angular/router';
+
+import { QuizResolverService } from './services/quiz-resolver.service';
+
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
 import { QuizComponent } from './quiz/quiz.component';
-import {RouterModule} from '@angular/router';
 const routes = [
     {path: '', component: HomeComponent},
     {path: 'leaderboard', component: LeaderboardComponent},
-    {path: 'quiz/id', component: QuizComponent}
+    {path: 'quiz/id', component: QuizComponent, resolve:  QuizResolverService}
 ];
 
 

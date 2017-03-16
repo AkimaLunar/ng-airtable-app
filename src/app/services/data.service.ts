@@ -2,10 +2,9 @@ import { Injectable } from '@angular/core';
 import { Http, Response } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
+import 'rxjs/add/operator/toPromise';
 import 'rxjs/add/operator/catch';
 import 'rxjs/add/operator/map';
-import 'rxjs/add/operator/do';
-import 'rxjs/add/operator/count';
 
 import { Question } from '../quiz/question/question';
 
@@ -16,27 +15,30 @@ import { TESTDATA } from '../mock-test-data';
 @Injectable()
 export class DataService {
   // private dataUrl = 'https://raw.githubusercontent.com/AkimaLunar/ng-airtable-app/restructure/src/app/mock-test-data.json';
-  private dataUrl = 'https://api.airtable.com/v0/apppdxgm3hmrZWDwE/Quiz%20Two?api_key=keyRdgQxtBeMi3ASe';
+  private dataUrl = 'https://api.airtable.com/v0/apppdxgm3hmrZWDwE/Cat%20Questions?api_key=keyRdgQxtBeMi3ASe';
   private airtableUrl = 'https://api.airtable.com/v0/apppdxgm3hmrZWDwE/';
   private airtableKey = 'api_key=keyRdgQxtBeMi3ASe';
-  private airtableBase = 'Quiz%20Two';
 
-  // private airtableBases = ['Quiz%20Two', 'Quiz%20One'];
+  private airtableBases = ['Cat%20Questions', 'Movie%20Questions'];
 
-  private extractData(res: Response) {
-    let data = res.json();
-    let quiz = [];
+  private extractData(response) {
+    const data = response.json();
+    const quiz = [];
     data.records.forEach(element => {
-      let question: any = new Object;
-      question.text = element.fields['Text'];
-      question.options = element.fields['Options'].split(', ');
-      question.answer = element.fields['CorrectAnswer'];
+      let question = {
+        text: String,
+        options: Array,
+        answer: String
+       };
+      question.text = element.fields['Text'] ? element.fields['Text'] : '';
+      question.options = element.fields['Options'] ? element.fields['Options'].split(', ') : [''];
+      question.answer = element.fields['CorrectAnswer'] ? element.fields['CorrectAnswer'] : '';
       quiz.push(question);
     });
     return quiz;
   }
 
-  private handleError (error: Response | any) {
+  private handleError (error: any) {
     // In a real world app, you might use a remote logging infrastructure
     let errMsg: string;
     if (error instanceof Response) {
@@ -52,28 +54,24 @@ export class DataService {
 
   constructor(private http: Http){}
 
-  getQuizes() {
-    // let data = static cache
-    return this.http.get(this.dataUrl)
-      .map(this.extractData)
-      .do(res => console.log(res))
-      //.map(res => res.json())
-      .catch(this.handleError);
-
-
-  }
-
-  getNumber() {
-    return this.http.get(this.dataUrl).count().catch(this.handleError);
-  }
-
-  getQuiz(id: number) {
-    // let quizUrl = this.airtableUrl + this.airtableBases[id] + '?' + this.airtableKey;
-    let quizUrl = this.airtableUrl + this.airtableBase + '?' + this.airtableKey;
+  getQuiz(id: number): Promise<Question[]> {
+    // const quizUrl = this.airtableUrl + this.airtableBases[id] + '?' + this.airtableKey;
+    const quizUrl = 'https://api.airtable.com/v0/apppdxgm3hmrZWDwE/Cat%20Questions?api_key=keyRdgQxtBeMi3ASe';
+    console.log('Getting data');
     return this.http.get(quizUrl)
-      // .map(this.extractData)
-      .map(res => res.json())
-      .catch(this.handleError);
+      // .map(res => res.json())
+      .map(this.extractData)
+      .catch(this.handleError)
+      .toPromise();
+  }
+  getQuiz2(id: number){
+    // const quizUrl = this.airtableUrl + this.airtableBases[id] + '?' + this.airtableKey;
+    const quizUrl = 'https://api.airtable.com/v0/apppdxgm3hmrZWDwE/Cat%20Questions?api_key=keyRdgQxtBeMi3ASe';
+    console.log('Getting data');
+    return this.http.get(quizUrl)
+      //.map(res => res.json())
+      .map(this.extractData)
+      .catch(this.handleError)
   }
 
   getQuestions(): Question[] {
