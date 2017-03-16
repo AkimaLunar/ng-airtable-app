@@ -25,7 +25,7 @@ export class DataService {
     const data = response.json();
     const quiz = [];
     data.records.forEach(element => {
-      let question = {
+      const question = {
         text: String,
         options: Array,
         answer: String
@@ -52,7 +52,7 @@ export class DataService {
     return Observable.throw(errMsg);
   }
 
-  constructor(private http: Http){}
+  constructor(private http: Http) {}
 
   getQuiz(id: number): Promise<Question[]> {
     // const quizUrl = this.airtableUrl + this.airtableBases[id] + '?' + this.airtableKey;
@@ -64,14 +64,14 @@ export class DataService {
       .catch(this.handleError)
       .toPromise();
   }
-  getQuiz2(id: number){
+  getQuiz2(id: number) {
     // const quizUrl = this.airtableUrl + this.airtableBases[id] + '?' + this.airtableKey;
     const quizUrl = 'https://api.airtable.com/v0/apppdxgm3hmrZWDwE/Cat%20Questions?api_key=keyRdgQxtBeMi3ASe';
     console.log('Getting data');
     return this.http.get(quizUrl)
-      //.map(res => res.json())
+      // .map(res => res.json())
       .map(this.extractData)
-      .catch(this.handleError)
+      .catch(this.handleError);
   }
 
   getQuestions(): Question[] {

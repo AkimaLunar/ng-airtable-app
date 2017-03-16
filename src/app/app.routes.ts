@@ -8,11 +8,16 @@ import { QuizComponent } from './quiz/quiz.component';
 const routes = [
     {path: '', component: HomeComponent},
     {path: 'leaderboard', component: LeaderboardComponent},
-    {path: 'quiz/id', component: QuizComponent, resolve:  QuizResolverService}
+    {
+        path: 'quiz/id',
+        component: QuizComponent,
+        resolve: {
+            quiz: QuizResolverService
+        }
+    }
 ];
 
-
-export default RouterModule.forRoot(routes);
+export const Routing = RouterModule.forRoot(routes);
 
 // .forRoot(routes);
 // .forChild(routes);

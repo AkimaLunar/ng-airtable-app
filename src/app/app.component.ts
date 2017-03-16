@@ -15,7 +15,7 @@ export class AppComponent implements OnInit {
   currentQuiz: Question[];
   constructor ( private dataService: DataService) {}
   ngOnInit() {
-    this.dataService.getQuiz2(this.id).subscribe((response => this.currentQuiz = response),
+    this.dataService.getQuiz(this.id).then((response => this.currentQuiz = response),
       function(){
         console.log('Promise: I failed :(!');
       }

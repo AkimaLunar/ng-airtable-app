@@ -15,14 +15,12 @@ import { Question } from './question/question';
   styleUrls: ['./quiz.component.css']
 })
 export class QuizComponent implements OnInit {
-  quizes;
-  errorMessage: string;
-  questions: any;
+  quiz: any;
+  questions: Question[];
   questionsTotal: number;
   currentQuestion: Question;
   correctAnswers: number;
   final: boolean;
-  quizBehaviorSubject;
 
   mode = 'Observable';
 
@@ -31,14 +29,17 @@ export class QuizComponent implements OnInit {
     public progressService: ProgressService,
     private route: ActivatedRoute,
     private router: Router
-  ) { }
+  ) {
+  }
 
   ngOnInit() {
     this.route.data
-      .subscribe(
-        function (x) {
-          console.log('Next: ' + x);
-        },
+      .subscribe((data) => {
+        this.quiz = data;
+        this.questions = this.quiz.quiz;
+        this.currentQuestion = this.quiz.quiz[this.progressService.counter];
+        this.questionsTotal = this.quiz.quiz.length;
+      },
         function (err) {
           console.log('Error: ' + err);
         },
