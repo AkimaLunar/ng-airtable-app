@@ -8,10 +8,6 @@ import 'rxjs/add/operator/map';
 
 import { Question } from '../quiz/question/question';
 
-// Temporary data
-import { TESTDATA } from '../mock-test-data';
-
-
 @Injectable()
 export class DataService {
   // private dataUrl = 'https://raw.githubusercontent.com/AkimaLunar/ng-airtable-app/restructure/src/app/mock-test-data.json';
@@ -72,9 +68,6 @@ export class DataService {
       .toPromise();
   }
 
-  getQuestions(): Question[] {
-    return TESTDATA;
-  }
   getNumberOfQuestions(id: number): Promise<number> {
     const quizUrl = this.airtableUrl + this.airtableBases[0] + '?' + this.airtableKey;
     // const quizUrl = 'https://api.airtable.com/v0/apppdxgm3hmrZWDwE/Cat%20Questions?api_key=keyRdgQxtBeMi3ASe';
