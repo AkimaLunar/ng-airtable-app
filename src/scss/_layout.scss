@@ -11,3 +11,10 @@ body {
   margin-bottom: 4rem;
   padding: 4rem; 
 }
+
+.home{
+  &__title{
+    font-size: 4rem;
+    text-align: center;
+  }
+}

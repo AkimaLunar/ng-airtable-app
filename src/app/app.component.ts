@@ -10,15 +10,9 @@ import { Question } from './quiz/question/question';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  mode = 'Observable';
-  id = 0;
-  currentQuiz: Question[];
+  quizList;
   constructor ( private dataService: DataService) {}
   ngOnInit() {
-    this.dataService.getQuiz(this.id).then((response => this.currentQuiz = response),
-      function(){
-        console.log('Promise: I failed :(!');
-      }
-    );
+    this.quizList = this.dataService.getQuizList();
   }
 }

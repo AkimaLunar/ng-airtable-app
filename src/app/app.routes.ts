@@ -9,7 +9,7 @@ const routes = [
     {path: '', component: HomeComponent},
     {path: 'leaderboard', component: LeaderboardComponent},
     {
-        path: 'quiz/id',
+        path: 'quiz/:id',
         component: QuizComponent,
         resolve: {
             quiz: QuizResolverService

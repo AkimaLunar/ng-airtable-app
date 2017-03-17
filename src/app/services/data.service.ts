@@ -15,10 +15,9 @@ import { TESTDATA } from '../mock-test-data';
 @Injectable()
 export class DataService {
   // private dataUrl = 'https://raw.githubusercontent.com/AkimaLunar/ng-airtable-app/restructure/src/app/mock-test-data.json';
-  private dataUrl = 'https://api.airtable.com/v0/apppdxgm3hmrZWDwE/Cat%20Questions?api_key=keyRdgQxtBeMi3ASe';
+  // private dataUrl = 'https://api.airtable.com/v0/apppdxgm3hmrZWDwE/Cat%20Questions?api_key=keyRdgQxtBeMi3ASe';
   private airtableUrl = 'https://api.airtable.com/v0/apppdxgm3hmrZWDwE/';
   private airtableKey = 'api_key=keyRdgQxtBeMi3ASe';
-
   private airtableBases = ['Cat%20Questions', 'Movie%20Questions'];
 
   private extractData(response) {
@@ -39,7 +38,7 @@ export class DataService {
   }
 
   private handleError (error: any) {
-    // In a real world app, you might use a remote logging infrastructure
+    // In a real world app, use a remote logging infrastructure
     let errMsg: string;
     if (error instanceof Response) {
       const body = error.json() || '';
@@ -53,10 +52,18 @@ export class DataService {
   }
 
   constructor(private http: Http) {}
+  getQuizList() {
+    const quizes = [];
+    this.airtableBases.forEach((element, index) => {
+      const title = decodeURI(element);
+      quizes.push({id: index, name: title});
 
+    });
+    return quizes;
+  }
   getQuiz(id: number): Promise<Question[]> {
-    // const quizUrl = this.airtableUrl + this.airtableBases[id] + '?' + this.airtableKey;
-    const quizUrl = 'https://api.airtable.com/v0/apppdxgm3hmrZWDwE/Cat%20Questions?api_key=keyRdgQxtBeMi3ASe';
+    const quizUrl = this.airtableUrl + this.airtableBases[id] + '?' + this.airtableKey;
+    // const quizUrl = 'https://api.airtable.com/v0/apppdxgm3hmrZWDwE/Cat%20Questions?api_key=keyRdgQxtBeMi3ASe';
     console.log('Getting data');
     return this.http.get(quizUrl)
       // .map(res => res.json())
@@ -64,17 +71,20 @@ export class DataService {
       .catch(this.handleError)
       .toPromise();
   }
-  getQuiz2(id: number) {
-    // const quizUrl = this.airtableUrl + this.airtableBases[id] + '?' + this.airtableKey;
-    const quizUrl = 'https://api.airtable.com/v0/apppdxgm3hmrZWDwE/Cat%20Questions?api_key=keyRdgQxtBeMi3ASe';
-    console.log('Getting data');
-    return this.http.get(quizUrl)
-      // .map(res => res.json())
-      .map(this.extractData)
-      .catch(this.handleError);
-  }
 
   getQuestions(): Question[] {
     return TESTDATA;
+  }
+  getNumberOfQuestions(id: number): Promise<number> {
+    const quizUrl = this.airtableUrl + this.airtableBases[0] + '?' + this.airtableKey;
+    // const quizUrl = 'https://api.airtable.com/v0/apppdxgm3hmrZWDwE/Cat%20Questions?api_key=keyRdgQxtBeMi3ASe';
+    console.log('Getting the number of questions');
+    return this.http.get(quizUrl)
+    .map((res) => {
+      const data = res.json();
+      return data.records.length;
+    })
+    .catch(this.handleError)
+    .toPromise();
   }
 }

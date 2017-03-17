@@ -6137,6 +6137,10 @@ body {
   margin-bottom: 4rem;
   padding: 4rem; }
 
+.home__title {
+  font-size: 4rem;
+  text-align: center; }
+
 .header {
   margin-top: 2rem; }
 
@@ -6148,6 +6152,16 @@ body {
   border-radius: 50%; }
   .avatar--small {
     height: 3.5rem; }
+
+.dropdown-item.selected {
+  background: #1abc9c;
+  color: #ffffff;
+  position: relative;
+  z-index: 1; }
+
+.navbar-inverse .navbar-nav > .open > .dropdown-menu > li {
+  color: #bbb;
+  padding: 6px 9px; }
 
 .question {
   min-height: 400px; }

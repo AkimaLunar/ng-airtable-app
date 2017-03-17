@@ -1,10 +1,9 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/catch';
-import 'rxjs/add/operator/map';
+import 'rxjs/add/operator/switchMap';
 
-import { ActivatedRoute, Router } from '@angular/router';
+import { Params, ActivatedRoute, Router } from '@angular/router';
 import { DataService } from '../services/data.service';
 import { ProgressService } from '../services/progress.service';
 import { Question } from './question/question';
@@ -15,6 +14,7 @@ import { Question } from './question/question';
   styleUrls: ['./quiz.component.css']
 })
 export class QuizComponent implements OnInit {
+  id: number;
   quiz: any;
   questions: Question[];
   questionsTotal: number;
@@ -33,6 +33,7 @@ export class QuizComponent implements OnInit {
   }
 
   ngOnInit() {
+    // this.id = this.route.params('id');
     this.route.data
       .subscribe((data) => {
         this.quiz = data;

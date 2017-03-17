@@ -13,11 +13,9 @@
           <li dropdown>
             <a dropdownToggle href="#fakelink">Available Tests <span class="caret"></span></a>
             <ul dropdownMenu role="menu" aria-labelledby="single-button">
-              <li role="menuitem"><a class="dropdown-item" routerLink="quiz/id">Action</a></li>
-              <li role="menuitem"><a class="dropdown-item" href="#">Another action</a></li>
-              <li role="menuitem"><a class="dropdown-item" href="#">Something else here</a></li>
+              <li *ngFor="let quiz of quizList" role="menuitem"><a class="dropdown-item" [routerLink]="['/quiz', quiz.id]" routerLinkActive="selected"> {{quiz.name}} </a></li>
               <li class="divider dropdown-divider"></li>
-              <li role="menuitem"><a class="dropdown-item" href="#">Separated link</a></li>
+              <li role="menuitem">More coming soon…</li>
             </ul>
           </li>
           <li><a href="#fakelink">About Us</a></li>
@@ -29,3 +27,4 @@
     </nav>
   </div>
 </div>
+
