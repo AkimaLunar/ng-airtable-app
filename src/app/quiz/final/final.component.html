@@ -1,0 +1,15 @@
+<h3 class="question__title">You got {{ correctAnswers }} out of {{ questionsTotal }}</h3>
+
+        <table class="table">
+          <tr>
+            <th>Question</th>
+            <th>Answer</th> 
+          </tr>
+          <tr *ngFor = "let question of questions">
+            <td>{{ question.text }}</td>
+            <td>{{ question.answer }}</td> 
+          </tr>
+
+        </table>
+
+        <button class="btn btn-block btn-lg btn-danger" (click)="startOver()"> Start Over</button>

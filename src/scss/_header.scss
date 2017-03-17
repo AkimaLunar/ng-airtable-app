@@ -1,3 +1,28 @@
 .header {
-    margin-top: 2rem;
+  margin-top: 2rem;
+}
+
+.user {
+padding: .8rem 21px !important;
+}
+
+.avatar {
+  margin: 0 1rem;
+  border-radius: 50%;
+
+  &--small {
+    height: 3.5rem;
+  }
+}
+
+.dropdown-item.selected {
+    background: #1abc9c;
+    color: #ffffff;
+    position: relative;
+    z-index: 1;
+}
+
+.navbar-inverse .navbar-nav > .open > .dropdown-menu > li {
+    color: #bbb;
+    padding: 6px 9px;
 }

@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="col-md-4">
+    <div class="card">
+      <h1 class="home__title">Let&rsquo;s take a test!</h1>
+    </div>
+  </div>
+  <div *ngFor="let quiz of quizList" class="col-md-4">
+
+    <div class="card">
+      <h6>{{ quiz.name }}</h6>
+        <hr>
+        <p><em class="text-muted">Description coming soon…</em></p>
+        <a [routerLink]="['/quiz', quiz.id]" class="btn btn-block btn-lg btn-primary">Take this test</a>
+
+    </div>
+  </div>
+</div>
+

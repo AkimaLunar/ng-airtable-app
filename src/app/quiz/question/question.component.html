@@ -1,0 +1,6 @@
+<h3 class="question__title">{{ currentQuestion?.text }}</h3>
+<div class="row">
+  <button *ngFor="let option of currentQuestion?.options" class="btn btn-block btn-lg btn-primary" (click)="guess(option)">{{ option }}</button>
+</div>
+
+

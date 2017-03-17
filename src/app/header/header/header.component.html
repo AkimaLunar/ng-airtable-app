@@ -1,31 +1,30 @@
-<div class="row demo-row">
+<div class="row">
   <div class="col-xs-12">
     <nav class="navbar navbar-inverse navbar-embossed" role="navigation">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
           <span class="sr-only">Toggle navigation</span>
         </button>
-        <a class="navbar-brand" href="#">Quizuple</a>
+        <a class="navbar-brand" routerLink="/">Quizuple</a>
       </div>
       <div class="collapse navbar-collapse" id="navbar-collapse-01">
         <ul class="nav navbar-nav navbar-left">
-          <li class="dropdown">
-            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Available Tests <b class="caret"></b></a>
-            <span class="dropdown-arrow"></span>
-            <ul class="dropdown-menu">
-              <li><a href="#">Action</a></li>
-              <li><a href="#">Another action</a></li>
-              <li><a href="#">Something else here</a></li>
-              <li class="divider"></li>
-              <li><a href="#">Separated link</a></li>
+          <li><a routerLink="/leaderboard">Leaderboard <span class="navbar-unread">3</span></a></li>
+          <li dropdown>
+            <a dropdownToggle href="#fakelink">Available Tests <span class="caret"></span></a>
+            <ul dropdownMenu role="menu" aria-labelledby="single-button">
+              <li *ngFor="let quiz of quizList" role="menuitem"><a class="dropdown-item" [routerLink]="['/quiz', quiz.id]" routerLinkActive="selected"> {{quiz.name}} </a></li>
+              <li class="divider dropdown-divider"></li>
+              <li role="menuitem">More coming soon…</li>
             </ul>
           </li>
           <li><a href="#fakelink">About Us</a></li>
          </ul>
          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#fakelink">Betsy DeVos<span class="navbar-unread">1</span></a></li>
+            <li><a href="#fakelink" class="user">Betsy DeVos<img src="https://api.adorable.io/avatars/60/ria%40carmin.com" alt="betsy devos avatar" class="avatar avatar--small"></a></li>
         </ul>
-      </div><!-- /.navbar-collapse -->
-    </nav><!-- /navbar -->
+      </div>
+    </nav>
   </div>
-  </div>
+</div>
+

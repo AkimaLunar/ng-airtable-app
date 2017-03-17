@@ -4026,7 +4026,8 @@ fieldset[disabled] .input-group-btn .btn-default.active {
 
 @media (min-width: 768px) {
   .navbar-header {
-    float: left; } }
+    float: left;
+    margin-right: 2rem; } }
 
 .navbar-collapse {
   box-shadow: none;
@@ -4039,9 +4040,6 @@ fieldset[disabled] .input-group-btn .btn-default.active {
 @media (min-width: 768px) {
   .navbar-collapse .navbar-nav.navbar-left:first-child {
     margin-left: -21px; }
-  .navbar-collapse .navbar-nav.navbar-left:first-child > li:first-child a {
-    border-bottom-left-radius: 6px;
-    border-top-left-radius: 6px; }
   .navbar-collapse .navbar-nav.navbar-right:last-child {
     margin-right: -21px; }
   .navbar-collapse .navbar-nav.navbar-right:last-child > .dropdown:last-child > a {
@@ -6139,8 +6137,31 @@ body {
   margin-bottom: 4rem;
   padding: 4rem; }
 
+.home__title {
+  font-size: 4rem;
+  text-align: center; }
+
 .header {
   margin-top: 2rem; }
+
+.user {
+  padding: .8rem 21px !important; }
+
+.avatar {
+  margin: 0 1rem;
+  border-radius: 50%; }
+  .avatar--small {
+    height: 3.5rem; }
+
+.dropdown-item.selected {
+  background: #1abc9c;
+  color: #ffffff;
+  position: relative;
+  z-index: 1; }
+
+.navbar-inverse .navbar-nav > .open > .dropdown-menu > li {
+  color: #bbb;
+  padding: 6px 9px; }
 
 .question {
   min-height: 400px; }
