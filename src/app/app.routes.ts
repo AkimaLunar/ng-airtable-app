@@ -18,6 +18,3 @@ const routes = [
 ];
 
 export const Routing = RouterModule.forRoot(routes);
-
-// .forRoot(routes);
-// .forChild(routes);
