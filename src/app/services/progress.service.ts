@@ -1,12 +1,22 @@
-import { Injectable, EventEmitter } from '@angular/core';
+import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs/Subject';
+import { BehaviorSubject } from 'rxjs/BehaviorSubject';
+import { Progress } from '../shared/progress/progress';
 
 @Injectable()
+
 export class ProgressService {
     counter = 0;
-    increment(): void {
+    total: Subject<number> = new BehaviorSubject<number>(null);
+
+    setTotal(num: number) {
+        this.total.next(num);
+    }
+
+    public increment(): void {
         this.counter++;
     }
-    reset(): void {
+    public reset(): void {
         this.counter = 0;
     }
 }

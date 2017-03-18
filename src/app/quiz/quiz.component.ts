@@ -33,22 +33,21 @@ export class QuizComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.id = this.route.params('id');
     this.route.data
       .subscribe((data) => {
+        this.stateReset();
         this.quiz = data;
         this.questions = this.quiz.quiz;
         this.currentQuestion = this.quiz.quiz[this.progressService.counter];
         this.questionsTotal = this.quiz.quiz.length;
+        this.progressService.setTotal(this.questionsTotal);
       },
         function (err) {
           console.log('Error: ' + err);
         },
         function () {
           console.log('Completed');
-        }
-      );
-    console.log('setting up the rest of the state');
+        });
     this.final = false;
     this.correctAnswers = 0;
   }
@@ -78,9 +77,12 @@ export class QuizComponent implements OnInit {
   }
 
   onReset(): void {
+    this.stateReset();
+    this.currentQuestion = this.questions[0];
+  }
+  stateReset(): void {
     this.progressService.reset();
     this.correctAnswers = 0;
     this.final = false;
-    this.currentQuestion = this.questions[0];
   }
 }

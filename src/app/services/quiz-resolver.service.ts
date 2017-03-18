@@ -14,7 +14,6 @@ export class QuizResolverService implements Resolve<Question[]> {
 
   resolve(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): Promise<Question[]> {
     const id = route.params['id'];
-    // const id = 0;
     return this.dataService.getQuiz(id).then(quiz => {
       if (quiz) {
         return quiz;
