@@ -1,9 +1,21 @@
 .header {
   margin-top: 2rem;
+
+  &__logo {
+    height: 42px;
+    padding: 0 .55rem;
+    margin-top: .55rem;
+    margin-right: .55rem;
+    vertical-align: -50%;
+  }
+}
+
+.navbar-brand>img {
+  display: inline-block !important;
 }
 
 .user {
-padding: .8rem 21px !important;
+padding: .8rem 0 !important;
 }
 
 .avatar {
@@ -25,4 +37,10 @@ padding: .8rem 21px !important;
 .navbar-inverse .navbar-nav > .open > .dropdown-menu > li {
     color: #bbb;
     padding: 6px 9px;
+}
+
+.btn-login {
+    margin-top: .55rem;
+    margin-right: .6rem;
+    width: 10rem;
 }

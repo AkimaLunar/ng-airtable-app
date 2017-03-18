@@ -7,6 +7,7 @@ import { AlertModule } from 'ng2-bootstrap';
 import { Routing } from './app.routes';
 import { QuizResolverService } from './services/quiz-resolver.service';
 import { DataService } from './services/data.service';
+import { AuthService } from './services/auth.service';
 
 import { HeaderModule } from './header/header.module';
 import { QuizModule } from './quiz/quiz.module';
@@ -31,7 +32,11 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
     HeaderModule,
     QuizModule
   ],
-  providers: [DataService, QuizResolverService],
+  providers: [
+    DataService,
+    QuizResolverService,
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -4094,7 +4094,7 @@ fieldset[disabled] .input-group-btn .btn-default.active {
   line-height: 1.042;
   height: 53px;
   font-weight: 700;
-  padding: 14px 21px; }
+  padding: 0 .55rem; }
 
 .navbar-brand > [class*="fui-"] {
   font-size: 19px;
@@ -6143,9 +6143,18 @@ body {
 
 .header {
   margin-top: 2rem; }
+  .header__logo {
+    height: 42px;
+    padding: 0 .55rem;
+    margin-top: .55rem;
+    margin-right: .55rem;
+    vertical-align: -50%; }
+
+.navbar-brand > img {
+  display: inline-block !important; }
 
 .user {
-  padding: .8rem 21px !important; }
+  padding: .8rem 0 !important; }
 
 .avatar {
   margin: 0 1rem;
@@ -6162,6 +6171,11 @@ body {
 .navbar-inverse .navbar-nav > .open > .dropdown-menu > li {
   color: #bbb;
   padding: 6px 9px; }
+
+.btn-login {
+  margin-top: .55rem;
+  margin-right: .6rem;
+  width: 10rem; }
 
 .question {
   min-height: 400px; }

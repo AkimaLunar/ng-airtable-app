@@ -5,7 +5,7 @@
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse-01">
           <span class="sr-only">Toggle navigation</span>
         </button>
-        <a class="navbar-brand" routerLink="/">Quizuple</a>
+        <a class="navbar-brand" routerLink="/"><img class=header__logo src="https://dl.dropboxusercontent.com/u/108453220/Quee/logo.png" alt="Logo">Quizuple</a>
       </div>
       <div class="collapse navbar-collapse" id="navbar-collapse-01">
         <ul class="nav navbar-nav navbar-left">
@@ -14,14 +14,20 @@
             <a dropdownToggle href="#fakelink">Available Tests <span class="caret"></span></a>
             <ul dropdownMenu role="menu" aria-labelledby="single-button">
               <li *ngFor="let quiz of quizList" role="menuitem"><a class="dropdown-item" [routerLink]="['/quiz', quiz.id]" routerLinkActive="selected"> {{quiz.name}} </a></li>
-              <li class="divider dropdown-divider"></li>
-              <li role="menuitem">More coming soon…</li>
             </ul>
           </li>
           <li><a href="#fakelink">About Us</a></li>
          </ul>
          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#fakelink" class="user">Betsy DeVos<img src="https://api.adorable.io/avatars/60/ria%40carmin.com" alt="betsy devos avatar" class="avatar avatar--small"></a></li>
+            <li *ngIf="!authService.authenticated() || !authService.userProfile"><button class="btn btn-primary btn-login" (click)="authService.signIn()">Log In</button></li>
+            <li *ngIf="authService.authenticated() && authService.userProfile" dropdown>
+              <a dropdownToggle class="user">{{ authService.userProfile.user_metadata.full_name }}<img src="https://api.adorable.io/avatars/60/{{ authService.userProfile.user_id }}" alt="{{ authService.userProfile.user_metadata.full_name }} avatar" class="avatar avatar--small"></a>
+              <ul dropdownMenu role="menu" aria-labelledby="single-button">
+                <li role="menuitem"><a class="dropdown-item" routerLink="/"> Profile </a></li>
+                <li class="divider dropdown-divider"></li>
+                <li role="menuitem"><a class="dropdown-item" (click)="authService.signOut()"> Log Out </a></li>
+            </ul>
+            </li>
         </ul>
       </div>
     </nav>

@@ -22,6 +22,8 @@
     "@angular/platform-browser-dynamic": "^2.3.1",
     "@angular/router": "^3.3.1",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.20",
+    "angular2-jwt": "^0.1.28",
+    "auth0-lock": "^10.13.0",
     "bootstrap": "^3.3.7",
     "core-js": "^2.4.1",
     "flat-ui": "^2.1.1",
@@ -34,6 +36,7 @@
   "devDependencies": {
     "@angular/cli": "^1.0.0-rc.0",
     "@angular/compiler-cli": "^2.3.1",
+    "@types/auth0-lock": "^10.10.0",
     "@types/jasmine": "2.5.38",
     "@types/node": "^6.0.42",
     "codelyzer": "~2.0.0-beta.1",
