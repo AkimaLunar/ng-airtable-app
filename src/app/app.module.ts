@@ -8,6 +8,7 @@ import { Routing } from './app.routes';
 import { QuizResolverService } from './services/quiz-resolver.service';
 import { DataService } from './services/data.service';
 import { AuthService } from './services/auth.service';
+import { AuthGuard } from './services/auth-guard.service';
 
 import { HeaderModule } from './header/header.module';
 import { QuizModule } from './quiz/quiz.module';
@@ -15,12 +16,14 @@ import { QuizModule } from './quiz/quiz.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { LeaderboardComponent } from './leaderboard/leaderboard.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     LeaderboardComponent,
+    ProfileComponent,
   ],
   imports: [
     Routing,
@@ -35,7 +38,8 @@ import { LeaderboardComponent } from './leaderboard/leaderboard.component';
   providers: [
     DataService,
     QuizResolverService,
-    AuthService
+    AuthService,
+    AuthGuard
   ],
   bootstrap: [AppComponent]
 })

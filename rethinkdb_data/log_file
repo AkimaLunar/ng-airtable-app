@@ -1,0 +1,59 @@
+2017-03-18T19:09:30.419903000 0.008530s notice: Recursively removing directory /Users/riacarmin/Projects/ng-airtable-app/rethinkdb_data/tmp
+2017-03-18T19:09:30.421320000 0.009951s notice: Initializing directory /Users/riacarmin/Projects/ng-airtable-app/rethinkdb_data
+2017-03-18T19:09:30.421410000 0.010036s info: Creating a default database for your convenience. (This is because you ran 'rethinkdb' without 'create', 'serve', or '--join', and the directory '/Users/riacarmin/Projects/ng-airtable-app/rethinkdb_data' did not already exist or is empty.)
+2017-03-18T19:09:30.421438000 0.010064s notice: Running rethinkdb 2.3.5 (CLANG 7.3.0 (clang-703.0.31))...
+2017-03-18T19:09:30.426999000 0.015626s notice: Running on Darwin 15.6.0 x86_64
+2017-03-18T19:09:30.427060000 0.015686s notice: Loading data from directory /Users/riacarmin/Projects/ng-airtable-app/rethinkdb_data
+2017-03-18T19:09:30.577750000 0.166376s info: Cache size is set to 200 MB
+2017-03-18T19:09:30.579371000 0.167996s notice: Listening for intracluster connections on port 55029
+2017-03-18T19:09:30.580995000 0.169620s notice: Listening for client driver connections on port 55030
+2017-03-18T19:09:30.581111000 0.169736s notice: Listening for administrative HTTP connections on port 55031
+2017-03-18T19:09:30.581148000 0.169773s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2017-03-18T19:09:30.581164000 0.169790s notice: Listening on driver addresses: 127.0.0.1, ::1
+2017-03-18T19:09:30.581166000 0.169792s notice: Listening on http addresses: 127.0.0.1, ::1
+2017-03-18T19:09:30.581172000 0.169797s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-03-18T19:09:30.581183000 0.169808s notice: Server ready, "pandafox_ezy" 7395f431-c2c3-4eb5-9919-3b50a6dcac4a
+2017-03-18T19:09:31.142534000 0.731160s info: Table 82274cf1-c509-4bca-9f8d-5bac7ca4b7f0: Starting a new Raft election for term 1.
+2017-03-18T19:09:31.142719000 0.731345s info: Table 82274cf1-c509-4bca-9f8d-5bac7ca4b7f0: Added replica on this server.
+2017-03-18T19:09:31.167638000 0.756264s info: Table 141abe8e-2ce8-4b8a-a8c4-f9eb549e8ba7: Starting a new Raft election for term 1.
+2017-03-18T19:09:31.167997000 0.756624s info: Table 141abe8e-2ce8-4b8a-a8c4-f9eb549e8ba7: Added replica on this server.
+2017-03-18T19:09:31.173269000 0.761895s info: Table 84a6c2b2-2cb9-40c7-a0e1-4dc4474eb54d: Starting a new Raft election for term 1.
+2017-03-18T19:09:31.173619000 0.762245s info: Table 84a6c2b2-2cb9-40c7-a0e1-4dc4474eb54d: Added replica on this server.
+2017-03-18T19:09:31.200359000 0.788986s info: Table 82274cf1-c509-4bca-9f8d-5bac7ca4b7f0: This server is Raft leader for term 1. Latest log index is 0.
+2017-03-18T19:09:31.200486000 0.789112s info: Table 141abe8e-2ce8-4b8a-a8c4-f9eb549e8ba7: This server is Raft leader for term 1. Latest log index is 0.
+2017-03-18T19:09:31.217659000 0.806285s info: Table 84a6c2b2-2cb9-40c7-a0e1-4dc4474eb54d: This server is Raft leader for term 1. Latest log index is 0.
+2017-03-18T19:09:32.307025000 1.895697s info: Table 31c23700-6636-4edb-a408-106d75bdd393: Starting a new Raft election for term 1.
+2017-03-18T19:09:32.307208000 1.895880s info: Table 31c23700-6636-4edb-a408-106d75bdd393: Added replica on this server.
+2017-03-18T19:09:32.332732000 1.921404s info: Table 31c23700-6636-4edb-a408-106d75bdd393: This server is Raft leader for term 1. Latest log index is 0.
+2017-03-18T19:11:10.694823000 100.285789s notice: Server got SIGINT from pid 78431, uid 503; shutting down...
+2017-03-18T19:11:10.695102000 100.286068s notice: Shutting down client connections...
+2017-03-18T19:11:10.702647000 100.293613s notice: All client connections closed.
+2017-03-18T19:11:10.702661000 100.293627s notice: Shutting down storage engine... (This may take a while if you had a lot of unflushed data in the writeback cache.)
+2017-03-18T19:11:10.723554000 100.314520s notice: Storage engine shut down.
+2017-03-18T19:12:02.389711000 0.007739s notice: Running rethinkdb 2.3.5 (CLANG 7.3.0 (clang-703.0.31))...
+2017-03-18T19:12:02.394864000 0.012889s notice: Running on Darwin 15.6.0 x86_64
+2017-03-18T19:12:02.395186000 0.013210s notice: Loading data from directory /Users/riacarmin/Projects/ng-airtable-app/rethinkdb_data
+2017-03-18T19:12:02.464225000 0.082249s info: Cache size is set to 200 MB
+2017-03-18T19:12:02.465240000 0.083264s notice: Listening for intracluster connections on port 55096
+2017-03-18T19:12:02.517530000 0.135555s notice: Listening for client driver connections on port 55097
+2017-03-18T19:12:02.517652000 0.135676s notice: Listening for administrative HTTP connections on port 55098
+2017-03-18T19:12:02.517751000 0.135775s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2017-03-18T19:12:02.517755000 0.135779s notice: Listening on driver addresses: 127.0.0.1, ::1
+2017-03-18T19:12:02.517757000 0.135781s notice: Listening on http addresses: 127.0.0.1, ::1
+2017-03-18T19:12:02.517759000 0.135783s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-03-18T19:12:02.517763000 0.135789s notice: Server ready, "pandafox_ezy" 7395f431-c2c3-4eb5-9919-3b50a6dcac4a
+2017-03-18T19:12:03.828546000 1.446617s info: Table 141abe8e-2ce8-4b8a-a8c4-f9eb549e8ba7: Starting a new Raft election for term 2.
+2017-03-18T19:12:03.842687000 1.460757s info: Table 141abe8e-2ce8-4b8a-a8c4-f9eb549e8ba7: This server is Raft leader for term 2. Latest log index is 5.
+2017-03-18T19:12:04.132772000 1.750842s info: Table 31c23700-6636-4edb-a408-106d75bdd393: Starting a new Raft election for term 2.
+2017-03-18T19:12:04.357988000 1.976059s info: Table 82274cf1-c509-4bca-9f8d-5bac7ca4b7f0: Starting a new Raft election for term 2.
+2017-03-18T19:12:04.484244000 2.102314s info: Table 84a6c2b2-2cb9-40c7-a0e1-4dc4474eb54d: Starting a new Raft election for term 2.
+2017-03-18T19:12:04.630923000 2.248993s info: Table 31c23700-6636-4edb-a408-106d75bdd393: This server is Raft leader for term 2. Latest log index is 5.
+2017-03-18T19:12:04.652685000 2.270755s info: Table 82274cf1-c509-4bca-9f8d-5bac7ca4b7f0: This server is Raft leader for term 2. Latest log index is 4.
+2017-03-18T19:12:04.652731000 2.270801s info: Table 84a6c2b2-2cb9-40c7-a0e1-4dc4474eb54d: This server is Raft leader for term 2. Latest log index is 4.
+2017-03-18T20:46:22.852928000 5660.599830s notice: Server got SIGINT from pid 65887, uid 503; shutting down...
+2017-03-18T20:46:22.853261000 5660.600163s notice: Shutting down client connections...
+2017-03-18T20:46:22.854144000 5660.601045s error: Error in src/rdb_protocol/artificial_table/cfeed_backend.cc at line 122:
+2017-03-18T20:46:22.854181000 5660.601082s error: Guarantee failed: [machinery->can_be_removed()] 
+2017-03-18T20:46:22.854204000 5660.601105s error: Backtrace:
+2017-03-18T20:46:22.877087000 5660.624030s error: Sat Mar 18 20:46:22 2017\n\n1 [0x10f873f34]: 0   rethinkdb                           0x000000010f873f34 _Z19rethinkdb_backtracePPvi + 132 at 0x10f873f34 ()\n2 [0x10f4556e8]: 0   rethinkdb                           0x000000010f4556e8 _ZN11backtrace_tC2Ev + 80 at 0x10f4556e8 ()\n3 [0x10f4567f9]: 0   rethinkdb                           0x000000010f4567f9 _ZN26lazy_backtrace_formatter_tC2Ev + 39 at 0x10f4567f9 ()\n4 [0x10f455376]: 0   rethinkdb                           0x000000010f455376 _Z16format_backtraceb + 25 at 0x10f455376 ()\n5 [0x10f67a883]: 0   rethinkdb                           0x000000010f67a883 _Z18report_fatal_errorPKciS0_z + 406 at 0x10f67a883 ()\n6 [0x10f6b532c]: 0   rethinkdb                           0x000000010f6b532c _ZN32cfeed_artificial_table_backend_t28begin_changefeed_destructionEv + 152 at 0x10f6b532c ()\n7 [0x10f59c737]: 0   rethinkdb                           0x000000010f59c737 _ZN39table_config_artificial_table_backend_tD2Ev + 25 at 0x10f59c737 ()\n8 [0x10f59c7f8]: 0   rethinkdb                           0x000000010f59c7f8 _ZN39table_config_artificial_table_backend_tD0Ev + 14 at 0x10f59c7f8 ()\n9 [0x10f4f64ff]: 0   rethinkdb                           0x000000010f4f64ff _ZN25admin_artificial_tables_tD2Ev + 245 at 0x10f4f64ff ()\n10 [0x10f4f2f31]: 0   rethinkdb                           0x000000010f4f2f31 _Z8do_serveP14io_backender_tbRK11base_path_tP15metadata_file_tRK12serve_info_tP16os_signal_cond_tRKNSt3__112basic_stringIcNSB_11char_traitsIcEENSB_9allocatorIcEEEE + 11485 at 0x10f4f2f31 ()\n11 [0x10f4f3e3e]: 0   rethinkdb                           0x000000010f4f3e3e _Z5serveP14io_backender_tRK11base_path_tP15metadata_file_tRK12serve_info_tP16os_signal_cond_t + 99 at 0x10f4f3e3e ()\n12 [0x10f4d2f65]: 0   rethinkdb                           0x000000010f4d2f65 _Z19run_rethinkdb_serveRK11base_path_tP12serve_info_tRKNSt3__112basic_stringIcNS4_11char_traitsIcEENS4_9allocatorIcEEEE21file_direct_io_mode_tiRKN5boost8optionalINSF_IyEEEEPK11server_id_tPK25server_config_versioned_tPK30cluster_semilattice_metadata_tP16directory_lock_tPb + 2419 at 0x10f4d2f65 ()\n13 [0x10f4d3469]: 0   rethinkdb                           0x000000010f4d3469 _Z23run_rethinkdb_porcelainRK11base_path_tRK13name_string_tRKNSt3__13setIS2_NS5_4lessIS2_EENS5_9allocatorIS2_EEEERKNS5_12basic_stringIcNS5_11char_traitsIcEENS9_IcEEEE21file_direct_io_mode_tiRKN5boost8optionalINSN_IyEEEEbP12serve_info_tP16directory_lock_tPb + 505 at 0x10f4d3469 ()\n14 [0x10f4e8378]: 0   rethinkdb                           0x000000010f4e8378 _ZNSt3__110__function6__funcINS_6__bindIPFvRK11base_path_tRK13name_string_tRKNS_3setIS6_NS_4lessIS6_EENS_9allocatorIS6_EEEERKNS_12basic_stringIcNS_11char_traitsIcEENSC_IcEEEE21file_direct_io_mode_tiRKN5boost8optionalINSQ_IyEEEEbP12serve_info_tP16directory_lock_tPbEJRS3_RS6_RSE_RSL_RKSO_RiRSS_RbSW_SY_SZ_EEENSC_IS1B_EEFvvEEclEv + 100 at 0x10f4e8378 ()\n15 [0x10f451d61]: 0   rethinkdb                           0x000000010f451d61 _ZN9starter_t11run_wrapperERKNSt3__18functionIFvvEEE + 17 at 0x10f451d61 ()\n16 [0x10f44e6a3]: 0   rethinkdb                           0x000000010f44e6a3 _ZN6coro_t3runEv + 63 at 0x10f44e6a3 ()
+2017-03-18T20:46:22.877185000 5660.624126s error: Exiting.

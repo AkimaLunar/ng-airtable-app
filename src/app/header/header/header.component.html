@@ -23,7 +23,7 @@
             <li *ngIf="authService.authenticated() && authService.userProfile" dropdown>
               <a dropdownToggle class="user">{{ authService.userProfile.user_metadata.full_name }}<img src="https://api.adorable.io/avatars/60/{{ authService.userProfile.user_id }}" alt="{{ authService.userProfile.user_metadata.full_name }} avatar" class="avatar avatar--small"></a>
               <ul dropdownMenu role="menu" aria-labelledby="single-button">
-                <li role="menuitem"><a class="dropdown-item" routerLink="/"> Profile </a></li>
+                <li role="menuitem"><a class="dropdown-item" routerLink="profile"> Profile </a></li>
                 <li class="divider dropdown-divider"></li>
                 <li role="menuitem"><a class="dropdown-item" (click)="authService.signOut()"> Log Out </a></li>
             </ul>
