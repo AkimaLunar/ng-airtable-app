@@ -41,4 +41,3 @@ Thumbs.db
 
 # Database log
 /rethinkdb_data/log_file
-rethinkdb_data/log_file

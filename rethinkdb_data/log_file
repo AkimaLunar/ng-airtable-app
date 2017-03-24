@@ -80,3 +80,27 @@
 2017-03-18T21:39:32.010760000 473.091747s info: Table fc33829d-e2e9-40f3-8cea-2c1eca92378f: Starting a new Raft election for term 1.
 2017-03-18T21:39:32.010942000 473.091930s info: Table fc33829d-e2e9-40f3-8cea-2c1eca92378f: Added replica on this server.
 2017-03-18T21:39:32.023957000 473.104945s info: Table fc33829d-e2e9-40f3-8cea-2c1eca92378f: This server is Raft leader for term 1. Latest log index is 0.
+2017-03-23T20:59:59.154112000 0.505274s notice: Running rethinkdb 2.3.5 (CLANG 7.3.0 (clang-703.0.31))...
+2017-03-23T20:59:59.161368000 0.512526s notice: Running on Darwin 15.6.0 x86_64
+2017-03-23T20:59:59.161410000 0.512568s notice: Loading data from directory /Users/riacarmin/Projects/ng-airtable-app/rethinkdb_data
+2017-03-23T20:59:59.374907000 0.726064s info: Cache size is set to 200 MB
+2017-03-23T20:59:59.376272000 0.727430s notice: Listening for intracluster connections on port 50473
+2017-03-23T20:59:59.451470000 0.802628s notice: Listening for client driver connections on port 50475
+2017-03-23T20:59:59.451592000 0.802749s notice: Listening for administrative HTTP connections on port 50476
+2017-03-23T20:59:59.451668000 0.802825s notice: Listening on cluster addresses: 127.0.0.1, ::1
+2017-03-23T20:59:59.451671000 0.802828s notice: Listening on driver addresses: 127.0.0.1, ::1
+2017-03-23T20:59:59.451672000 0.802829s notice: Listening on http addresses: 127.0.0.1, ::1
+2017-03-23T20:59:59.451674000 0.802831s notice: To fully expose RethinkDB on the network, bind to all addresses by running rethinkdb with the `--bind all` command line option.
+2017-03-23T20:59:59.451675000 0.802833s notice: Server ready, "pandafox_ezy" 7395f431-c2c3-4eb5-9919-3b50a6dcac4a
+2017-03-23T21:00:00.922714000 2.273917s info: Table 31c23700-6636-4edb-a408-106d75bdd393: Starting a new Raft election for term 4.
+2017-03-23T21:00:00.953012000 2.304215s info: Table 31c23700-6636-4edb-a408-106d75bdd393: This server is Raft leader for term 4. Latest log index is 15.
+2017-03-23T21:00:00.987802000 2.339005s info: Table fc33829d-e2e9-40f3-8cea-2c1eca92378f: Starting a new Raft election for term 2.
+2017-03-23T21:00:01.006135000 2.357337s info: Table fc33829d-e2e9-40f3-8cea-2c1eca92378f: This server is Raft leader for term 2. Latest log index is 3.
+2017-03-23T21:00:01.155831000 2.507078s info: Table 82274cf1-c509-4bca-9f8d-5bac7ca4b7f0: Starting a new Raft election for term 4.
+2017-03-23T21:00:01.186210000 2.537456s info: Table 82274cf1-c509-4bca-9f8d-5bac7ca4b7f0: This server is Raft leader for term 4. Latest log index is 12.
+2017-03-23T21:00:01.215510000 2.566757s info: Table 84a6c2b2-2cb9-40c7-a0e1-4dc4474eb54d: Starting a new Raft election for term 4.
+2017-03-23T21:00:01.241961000 2.593207s info: Table 84a6c2b2-2cb9-40c7-a0e1-4dc4474eb54d: This server is Raft leader for term 4. Latest log index is 12.
+2017-03-23T21:00:01.351842000 2.703089s info: Table 141abe8e-2ce8-4b8a-a8c4-f9eb549e8ba7: Starting a new Raft election for term 4.
+2017-03-23T21:00:01.418431000 2.769677s info: Table 141abe8e-2ce8-4b8a-a8c4-f9eb549e8ba7: This server is Raft leader for term 4. Latest log index is 15.
+2017-03-23T21:04:55.306474000 296.670163s notice: Removing file /Users/riacarmin/Projects/ng-airtable-app/rethinkdb_data/31c23700-6636-4edb-a408-106d75bdd393
+2017-03-23T21:04:55.306482000 296.670170s info: Table 31c23700-6636-4edb-a408-106d75bdd393: Deleted the table.
