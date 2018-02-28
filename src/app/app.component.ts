@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+import { HorizonService } from './services/horizon.service';
 import { DataService } from './services/data.service';
 import { Observable } from 'rxjs/Observable';
 import { Question } from './quiz/question/question';
@@ -11,7 +12,7 @@ import { Question } from './quiz/question/question';
 })
 export class AppComponent implements OnInit {
   quizList;
-  constructor ( private dataService: DataService) {}
+  constructor ( private dataService: DataService, private horizon: HorizonService) {}
   ngOnInit() {
     this.quizList = this.dataService.getQuizList();
   }

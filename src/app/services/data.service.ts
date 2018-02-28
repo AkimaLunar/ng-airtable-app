@@ -12,7 +12,7 @@ import { Question } from '../quiz/question/question';
 export class DataService {
   private airtableUrl = 'https://api.airtable.com/v0/apppdxgm3hmrZWDwE/';
   private airtableKey = 'api_key=keyRdgQxtBeMi3ASe';
-  private airtableBases = ['Cat%20Questions', 'Movie%20Questions'];
+  private airtableBases = ['Cat%20Questions', 'Fun%20Questions'];
 
   private extractData(response) {
     const data = response.json();

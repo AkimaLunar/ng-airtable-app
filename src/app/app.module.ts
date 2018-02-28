@@ -6,6 +6,7 @@ import { AlertModule } from 'ng2-bootstrap';
 
 import { Routing } from './app.routes';
 import { QuizResolverService } from './services/quiz-resolver.service';
+import { HorizonService } from './services/horizon.service';
 import { DataService } from './services/data.service';
 import { AuthService } from './services/auth.service';
 import { AuthGuard } from './services/auth-guard.service';
@@ -36,6 +37,7 @@ import { ProfileComponent } from './profile/profile.component';
     QuizModule
   ],
   providers: [
+    HorizonService,
     DataService,
     QuizResolverService,
     AuthService,
